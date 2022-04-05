@@ -17,5 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::controller(GoogleController::class)->group(function () {
     Route::get("/", "auth_initiate");
     Route::get("auth/google/callback", "auth_callback");
-    Route::get("courses", "courses");
+    Route::get("course-details/{courseID}", "course_details");
+    Route::get("course/{courseID}/students", "enrolled_students");
+    Route::get("course/{courseID}/grades", "course_grades");
 });
